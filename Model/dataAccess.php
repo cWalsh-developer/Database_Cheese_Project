@@ -3,7 +3,7 @@
     "k2116573",
     "oguizinu",
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    function getAllStudents()
+    function getAllProducts()
     {
         global $pdo;
         $statement = $pdo->prepare("SELECT * FROM students");
@@ -12,21 +12,21 @@
         return $results;
     }
 
-    function getStudentsBySurname($surname)
+    function getProductsByBrandName($brand)
     {
         global $pdo;
         $statement = $pdo->prepare("SELECT * FROM students WHERE familyName = ?");
-        $statement->execute([$surname]);
-        $results = $statement->fetchAll (PDO::FETCH_CLASS, "Student");
+        $statement->execute([$brand]);
+        $results = $statement->fetchAll (PDO::FETCH_CLASS, "Products");
         return $results;
     }
 
-    function getStudentByGivenName($givenName)
+    function getProductsByType($type)
     {
         global $pdo;
         $statement = $pdo->prepare("SELECT * FROM students WHERE givenName = ?");
-        $statement->execute([$givenName]);
-        $results = $statement->fetchAll(PDO::FETCH_CLASS, "Student");
+        $statement->execute([$type]);
+        $results = $statement->fetchAll(PDO::FETCH_CLASS, "Products");
         return $results;
     }
 ?>
