@@ -12,6 +12,7 @@
   body 
   {
     background-color: white;
+    font-family: sans-serif;
   }
   .Title
   {
@@ -25,9 +26,13 @@
   }
  .registrationForm
  {
-    width: max-content;
+    /* width: max-content;
     margin: 0 auto;
     padding: 30px 0 30px 10px;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
  }
 
@@ -39,14 +44,37 @@
  #Start
  {
    display: none;
-   margin: 10% 0 0 33%;
+   margin: 40px 0;
    color: white;
    background-color: #25238e;
    padding: 5px 20px;
  }
+
+ .login-center
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .start-center
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .radioForm-content
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+ }
+
  #submit
  {
-    margin: 0 20%;
+    margin: 0 auto;
     color: white;
     background-color: #25238e;
     padding: 5px 20px;
@@ -66,7 +94,11 @@
 
  #radioForm
  {
-   text-align: center;
+   /* text-align: center;
    margin-bottom: 0;
-   padding: 0;
+   padding: 0; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
  }

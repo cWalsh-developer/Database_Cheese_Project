@@ -3,12 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
-        <!-- <style>
-            <?php # include "stylesheet.css"?>
-        </style>
-        <script>
-            <?php # include "PE2_Calc_JavaScript.js"?>
-        </script> -->
         <link rel="stylesheet" href="../View/stylesheet.css">
     </head>
     <body>
@@ -18,10 +12,16 @@
             </div>
             <form id = radioForm>
                 <p> Which User Are you?</p>
-                <input type = "radio" id = "customer" name = "radioForm" value = "Customer" onclick = "customerRadioChecked()">
-                <label for = "customer"> Customer</label>
-                <input type = "radio" id = "admin" name = "radioForm" value = "Admin" onclick = "adminRadioChecked()">
-                <label for = "admin"> Admin</label>
+                <div class="radioForm-content">
+                    <div class="radioFrom-customer">
+                        <input type = "radio" id = "customer" name = "radioForm" value = "Customer" >
+                        <label for = "customer"> Customer</label>
+                    </div>
+                    <div class="radioFrom-admin">
+                        <input type = "radio" id = "admin" name = "radioForm" value = "Admin"  >
+                        <label for = "admin"> Admin</label>
+                    </div>                
+                </div>
             </form>
             <div class="registrationForm">
                 <form action="../Controller/login_control.php" id = "loginForm" method ="post">
@@ -33,10 +33,14 @@
                     <br>
                     <label for="password">Password:</label><br>
                     <input type="password" id="password" name="password"><br><br>
-                    <input type="submit" id="submit" value="Login">
+                    <div class="login-center">
+                        <input type="submit" id="submit" value="Login">
+                    </div>
                 </form> 
             </div>
-            <input type="submit" id="Start" value="Start Shopping" onclick = "buttonClick()">
+            <div class="start-center">
+                <input type="submit" id="Start" value="Start Shopping" onclick = "buttonClick()">
+            </div>
         </div>
         <script src="../View/PE2_Calc_JavaScript.js"></script>
         <script>

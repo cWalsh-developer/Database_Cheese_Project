@@ -5,7 +5,7 @@ function buttonClick()
 
 function customerRadioChecked()
 {
-    document.getElementById("Start").style.display = "block";
+    document.getElementById("Start").style.display = "inline-block";
     document.getElementById("loginForm").style.display = "none";
 }
 function adminRadioChecked()
@@ -23,4 +23,5 @@ function emailFieldClick()
   }
 }
 
-
+document.getElementById("customer").onclick = customerRadioChecked;
+document.getElementById("admin").onclick = adminRadioChecked;
