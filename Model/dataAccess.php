@@ -15,7 +15,7 @@
     function getProductsByBrandName($brand)
     {
         global $pdo;
-        $statement = $pdo->prepare("SELECT * FROM products WHERE brandName = ?");
+        $statement = $pdo->prepare("SELECT * FROM products WHERE brand = ?");
         $statement->execute([$brand]);
         $results = $statement->fetchAll (PDO::FETCH_CLASS, "Products");
         return $results;
@@ -24,7 +24,7 @@
     function getProductsByType($type)
     {
         global $pdo;
-        $statement = $pdo->prepare("SELECT * FROM prroducts WHERE productType = ?");
+        $statement = $pdo->prepare("SELECT * FROM products WHERE productType = ?");
         $statement->execute([$type]);
         $results = $statement->fetchAll(PDO::FETCH_CLASS, "Products");
         return $results;

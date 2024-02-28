@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require_once "../model/Products.php";
-require_once "../model/dataAccess.php";
+require_once "../Model/products.php";
+require_once "../Model/dataAccess.php";
 
 if(!isset($_SESSION["previousSearch"]))
 {
@@ -24,5 +24,5 @@ else
 }
 
 
-require_once "../view/products_view.php";
+require_once "../View/products_view.php";
 ?>

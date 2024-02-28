@@ -1,8 +1,8 @@
 <?php
 class Products
 {
-    private $id;
-    private $brandName;
+    private $cheeseID;
+    private $brand;
     private $productType;
     private $cost;
     
@@ -14,10 +14,6 @@ class Products
     function __set($name, $value)
     {
         $this->$name = $value;
-    }
-    function getFullName()
-    {
-        return "$this->familyName, $this->givenName";
     }
 }
 ?>

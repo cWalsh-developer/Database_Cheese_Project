@@ -3,9 +3,16 @@
     <head> 
         <meta charset="utf-8">
         <title>No Cheese For The Wicked</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <style>
+            <?php include "stylesheet.css"?>
+        </style>
     </head>
+ 
     <body>
+    <form method ="post" action="products_controller.php">
+            <input name = "search" value ="Search by brand or name:"/>
+            <input type = "submit" value ="search"/>
+    </form>
         <table>
             <thead>
                 <tr>
@@ -18,9 +25,9 @@
             <tbody>
                 <?php foreach ($results as $products): ?>
                 <tr>
-                    <td><?= $products->id ?></td>
-                    <td><?= $products->givenName ?></td>
-                    <td><?= $products->familyName ?></td>
+                    <td><?= $products->cheeseID ?></td>
+                    <td><?= $products->productType ?></td>
+                    <td><?= $products->brand?></td>
                     <td><?= $products->cost?></td>
                 </tr>
                 <?php endforeach ?>
