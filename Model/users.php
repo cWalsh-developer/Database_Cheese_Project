@@ -1,11 +1,11 @@
 <?php
-class Products
+class Users
 {
     private $id;
-    private $brandName;
-    private $productType;
-    private $cost;
-    
+    private $givenName;
+    private $familyName;
+    private $email;
+    private $password;
 
     function __get($name)
     {

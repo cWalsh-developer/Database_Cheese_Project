@@ -1,14 +1,11 @@
 <!doctype html>
 <html>
-    <head>
+    <head> 
+        <meta charset="utf-8">
         <title>No Cheese For The Wicked</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
     <body>
-        <form method ="post" action="studentlist.php">
-            Search for surname:
-                <input name = "search"/>
-                <input type = "submit" value ="search"/>
-            </form>
         <table>
             <thead>
                 <tr>
@@ -29,10 +26,11 @@
                 <?php endforeach ?>
             </tbody>
         </table>
+        <p>Recently Viewed Items:</p>
         <ul>
             <?php foreach ($_SESSION["previousSearch"] as $search): ?>
                 <li><?=$search?></li>
                 <?php endforeach ?>
-            </ul>
+        </ul>
     </body>
-</html>          
+</html>

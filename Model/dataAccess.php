@@ -6,7 +6,7 @@
     function getAllProducts()
     {
         global $pdo;
-        $statement = $pdo->prepare("SELECT * FROM students");
+        $statement = $pdo->prepare("SELECT * FROM products");
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_CLASS,"Products");
         return $results;
@@ -15,7 +15,7 @@
     function getProductsByBrandName($brand)
     {
         global $pdo;
-        $statement = $pdo->prepare("SELECT * FROM students WHERE familyName = ?");
+        $statement = $pdo->prepare("SELECT * FROM products WHERE brandName = ?");
         $statement->execute([$brand]);
         $results = $statement->fetchAll (PDO::FETCH_CLASS, "Products");
         return $results;
@@ -24,7 +24,7 @@
     function getProductsByType($type)
     {
         global $pdo;
-        $statement = $pdo->prepare("SELECT * FROM students WHERE givenName = ?");
+        $statement = $pdo->prepare("SELECT * FROM prroducts WHERE productType = ?");
         $statement->execute([$type]);
         $results = $statement->fetchAll(PDO::FETCH_CLASS, "Products");
         return $results;

@@ -24,5 +24,5 @@ else
 }
 
 
-require_once "../view/index.php";
+require_once "../view/products_view.php";
 ?>
