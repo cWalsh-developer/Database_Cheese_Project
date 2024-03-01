@@ -13,10 +13,6 @@
             </nav>
         </header>
         <div class="cheese-table">
-            <form method ="post" action="products_controller.php">
-                    <input name = "search" value ="Search by brand or name:"/>
-                    <input type = "submit" value ="search"/>
-                </form>
                 <table>
                     <thead>
                         <tr>
@@ -42,11 +38,5 @@
                     </tbody>
                 </table>
         </div>
-        <p>Recently Searched Products:</p>
-        <ul>
-            <?php foreach ($_SESSION["previousSearch"] as $search): ?>
-                <li><?=$search?></li>
-                <?php endforeach ?>
-        </ul>
     </body>
 </html>

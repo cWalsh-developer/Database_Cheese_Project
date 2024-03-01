@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'cheese';
+  src: url(Mailand\ Demo.otf);
+}
+
+
 .regContainerMain{
     width: 25%;
     box-shadow: 10px 10px 10px 2px black;
-    background: white;
+    background: whitesmoke;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     height: 450px;
     position: relative;
     font-size: large;
@@ -11,26 +17,43 @@
   }
   body 
   {
-    background-color: white;
     font-family: sans-serif;
+    margin: 0;
   }
-  .Title
+  #Title
   {
-    background-color: #25238e;
-    color: white;
+    background-color: black;
+    color: goldenrod;
     height: 25px;
     padding:10px;
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
+    text-decoration: underline;
+  }
+  header
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    width: 100%;
+    background-color: black;
+  }
+  #page-Title
+  {
+    font-family: 'cheese';
+    color: goldenrod;
+    background-color: black;
+    width:fit-content;
+    text-align: left;
   }
  .registrationForm
  {
-    /* width: max-content;
-    margin: 0 auto;
-    padding: 30px 0 30px 10px;
-    align-items: center; */
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -45,8 +68,8 @@
  {
    display: none;
    margin: 40px 0;
-   color: white;
-   background-color: #25238e;
+   color: goldenrod;
+   background-color: black;
    padding: 5px 20px;
  }
 
@@ -55,6 +78,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+ }
+
+ #customer, #admin
+ {
+  accent-color: goldenrod;
  }
 
  .start-center
@@ -67,23 +95,36 @@
  .radioForm-content
  {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
  }
 
+ .cheese-table
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+ }
+
+ table, tr, td
+ {
+  border: goldenrod solid 2px;
+  color: black;
+ }
  #submit
  {
     margin: 0 auto;
-    color: white;
-    background-color: #25238e;
+    color: goldenrod;
+    background-color: black;
     padding: 5px 20px;
 
  }
  form :focus
  {
     outline: none !important;
-    border: solid 2.5px #25238e;  
+    border: solid 2.5px #cca700a8;  
     padding: 5px;
  }
 
@@ -94,9 +135,6 @@
 
  #radioForm
  {
-   /* text-align: center;
-   margin-bottom: 0;
-   padding: 0; */
    display: flex;
    flex-direction: column;
    justify-content: center;

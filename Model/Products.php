@@ -5,6 +5,9 @@ class Products
     private $brand;
     private $productType;
     private $cost;
+    private $quantity;
+    private $strength;
+
     
 
     function __get($name)

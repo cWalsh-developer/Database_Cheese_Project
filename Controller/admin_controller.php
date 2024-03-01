@@ -1,12 +1,8 @@
 <?php 
 session_start();
-require_once "../Model/Products.php";
 require_once "../Model/DataAccess.php";
+require_once "../Model/Products.php";
 
-if(!isset($_SESSION["previousSearch"]))
-{
-    $_SESSION["previousSearch"] = [];
-}
 
 if(!isset($_REQUEST["search"]))
 {
@@ -15,7 +11,6 @@ if(!isset($_REQUEST["search"]))
 else
 {
     $search = $_REQUEST["search"];
-    $_SESSION["previousSearch"] [] = $search;
     $results = DataAccess::getInstance()->getProductsByBrandName($search);
     if ($results == null)
     {
@@ -28,5 +23,19 @@ else
 }
 
 
-require_once "../View/products_view.php";
+if($_SESSION["userDetails"] == "Admin")
+{
+    require_once "../View/admin_view.php";
+}
+else if($_SESSION["userDetails"] == "Customer")
+{
+    header("Location: ../Controller/products_controller.php");
+    exit;
+}
+else
+{
+    header("Location: ../Controller/login_control.php");
+    exit;
+}
+
 ?>

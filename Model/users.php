@@ -6,6 +6,7 @@ class Users
     private $familyName;
     private $email;
     private $password;
+    private $userType;
 
     function __get($name)
     {
