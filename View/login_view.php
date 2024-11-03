@@ -7,36 +7,23 @@
     </head>
     <body>
         <header>
-            <nav>
-            <h1 id = "page-Title">No Cheese For The Wicked</h3>
+            <nav id="login_nav">
+            <a href="../Controller/products_controller.php"><h1 id = "login_page-Title">No Cheese For The Wicked</h3></a>
             </nav>
         </header>
         <div class="regContainerMain">
             <div class="regContainerTitle">
-                <h3 id = "Title">Welcome</h3>
+                <h3 id = "Title">Login</h3>
             </div>
-            <form id = radioForm>
-                <p> Which User Are you?</p>
-                <div class="radioForm-content">
-                    <div class="radioFrom-customer">
-                        <input type = "radio" id = "customer" name = "radioForm" value = "Customer" >
-                        <label for = "customer"> Customer</label>
-                    </div>
-                    <div class="radioFrom-admin">
-                        <input type = "radio" id = "admin" name = "radioForm" value = "Admin"  >
-                        <label for = "admin"> Admin</label>
-                    </div>                
-                </div>
-            </form>
             <div class="registrationForm">
                 <form action="../Controller/login_control.php" id = "loginForm" method ="post">
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" value="Enter your email" onclick = "emailFieldClick()"><br>
+                    <label for="email" id="emailLabel">Email:</label><br>
+                    <input type="text" id="email" name="email" placeholder ="Enter your email"><br>
                     <?php if($status):?>
                         <p style = "color: red"><?=$status?></p>
                     <?php endif?>
                     <br>
-                    <label for="password">Password:</label><br>
+                    <label for="password" id="passwordLabel">Password:</label><br>
                     <input type="password" id="password" name="password"><br><br>
                     <?php if($passwordStatus):?>
                         <p style = "color: red"><?=$passwordStatus?></p>
@@ -45,16 +32,13 @@
                         <input type="submit" id="submit" value="Login">
                     </div>
                 </form> 
-            </div>
-            <div class="start-center">
-                <input type="submit" id="Start" value="Start Shopping" onclick = "buttonClick()">
+                <br>
+                <form action="../Controller/register_controller.php" method="post" id="registerFormBtn">
+                    <input type="submit" id="regSubmit" value="Register">
+                </form>
             </div>
         </div>
-        <script src="../JavaScript/Cheese.js"></script>
         <script>
-            if (<?= $admin ?> == 3) {
-                adminRadioChecked();
-            }
             document.getElementById("email").value = "<?= $search ?>";
             document.getElementById("password").value = "<?= $passwordSearch ?>";
         </script>

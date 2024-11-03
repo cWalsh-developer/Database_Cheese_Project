@@ -7,6 +7,8 @@ class Products
     private $cost;
     private $quantity;
     private $strength;
+    private $countryOfOrigin;
+    private $weight;
 
     
 

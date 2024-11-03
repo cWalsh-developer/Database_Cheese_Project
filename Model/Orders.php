@@ -1,16 +1,17 @@
 <?php
-class Users
+class Orders
 {
+    private $orderNo;
+    private $orderDate;
     private $userId;
     private $givenName;
     private $familyName;
     private $email;
-    private $password;
-    private $userType;
     private $addressLineOne;
     private $addressLineTwo;
-    private $postcode;
     private $townCity;
+    private $postcode;
+
 
     function __get($name)
     {
@@ -19,10 +20,6 @@ class Users
     function __set($name, $value)
     {
         $this->$name = $value;
-    }
-    function getFullName()
-    {
-        return "$this->familyName, $this->givenName";
     }
 }
 ?>

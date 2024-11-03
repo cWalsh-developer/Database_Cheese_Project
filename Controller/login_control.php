@@ -1,16 +1,41 @@
 <?php
-session_start();
 require_once "../Model/Users.php";
+require_once "../Model/Products.php";
+session_start();
 require_once "../Model/DataAccess.php";
 
+$quantityStatus = false;
+$basketCount = 0;
+if(!isset($_SESSION["userDetails"]))
+{
+    $_SESSION["userDetails"] = [];
+    $_SESSION["customerPreviousSearch"] = [];
+    $_SESSION["results"] = [];
+    $_SESSION["customerBasket"] = [];
+    $_SESSION["productUpdate"] = [];
+}
+else
+{
+    $basketCount = 0;
+    foreach($_SESSION["userDetails"] as $users)
+    {
+        if($users->userType == "Admin")
+        {
+            require_once "../View/adminHeaderFragment.php";
+            require_once "../View/admin_view.php";
+        }
+        else if($users->userType == "Customer")
+        {
+            require_once "../View/customerHeaderFragment.php";
+            require_once "../View/customer_products_view.php";
+        }
+    }
+}
 $status = false;
 $passwordStatus = false;
 $admin = 0;
 
-if(!isset($_SESSION["userDetails"]))
-{
-    $_SESSION["userDetails"] = [];
-}
+$_SESSION["results"] = DataAccess::getInstance()->getAllProducts();
 
 if (isset($_REQUEST["email"])) {
     $search = $_REQUEST["email"];
@@ -27,30 +52,39 @@ if (isset($_REQUEST["email"])) {
     }
     else
     {
-        $passwordResult = DataAccess::getInstance()->getUsers($search);
-        if($passwordResult == null)
+        $_SESSION["userDetails"] = DataAccess::getInstance()->getUsersByEmail($search);
+        if($_SESSION["userDetails"] == null)
         {
-            $passwordStatus = "This is not an admin user";
+            $passwordStatus = "No user found";
         }
         else
         {
-            foreach ($passwordResult as $passwords)
+            foreach ($_SESSION["userDetails"] as $passwords)
             {
-                $_SESSION["userDetails"] = $passwords->userType;
-                if($passwords->password == $passwordSearch)
+                if($passwords->password == $passwordSearch && $passwords->userType == "Admin")
                 {
-                    header("Location: ../Controller/admin_controller.php");
-                    exit;
+                    $_SESSION["results"] = DataAccess::getInstance()->getAllAdminProducts();
+                    require_once "../View/adminHeaderFragment.php";
+                    require_once "../View/admin_view.php";
+                }
+                else if($passwords->password == $passwordSearch && $passwords->userType == "Customer")
+                {
+                    require_once "../View/customerHeaderFragment.php";
+                    require_once "../View/customer_products_view.php";
                 }
                 else
                 {
                     $passwordStatus = "Incorrect Password";
+                    $_SESSION["userDetails"] = null;
                 }
             }
         }
     }
 }
+if($_SESSION["userDetails"] == null)
+{
+    require_once "../View/login_view.php";
+}
 
 
-require_once "../View/login_view.php";
 ?>

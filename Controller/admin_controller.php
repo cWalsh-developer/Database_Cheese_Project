@@ -1,41 +1,85 @@
 <?php 
+require_once "../Model/Products.php";
+require_once "../Model/Users.php";
 session_start();
 require_once "../Model/DataAccess.php";
-require_once "../Model/Products.php";
-
-
-if(!isset($_REQUEST["search"]))
+$basketCount = 0;
+if(!empty($_SESSION["userDetails"]) && $_SESSION["userDetails"] [0]->userType =="Admin")
 {
-    $results = DataAccess::getInstance()->getAllProducts();
-}
-else
-{
-    $search = $_REQUEST["search"];
-    $results = DataAccess::getInstance()->getProductsByBrandName($search);
-    if ($results == null)
+
+    
+    if(!isset($_REQUEST["search"]))
     {
-        $results = DataAccess::getInstance()->getProductsByType($search);
-        if($results == null)
+        $_SESSION["results"] = DataAccess::getInstance()->getAllAdminProducts();
+    }
+    else
+    {
+        $search = $_REQUEST["search"];
+        if (DataAccess::getInstance()->getAdminProductsByBrandName($search) != null)
         {
-            $results = DataAccess::getInstance()->getAllProducts();
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByBrandName($search);
+        }
+        else if(DataAccess::getInstance()->getAdminProductsByType($search) !=null)
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByType($search);
+        }
+        else if(DataAccess::getInstance()->getAdminProductsByCost($search) !=null)
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByCost($search);
+        }
+        else if(DataAccess::getInstance()->getAdminProductsByCountryOfOrigin($search) !=null)
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByCountryOfOrigin($search);
+        }
+        else if(DataAccess::getInstance()->getAdminProductsByWeight(trim($search, "g")) !=null)
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByWeight($search);
+        }
+        else if(DataAccess::getInstance()->getAdminProductsByStrength($search) !=null)
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAdminProductsByStrength($search);
+        }
+        else
+        {
+            $_SESSION["results"] = DataAccess::getInstance()->getAllAdminProducts();
         }
     }
-}
-
-
-if($_SESSION["userDetails"] == "Admin")
-{
+    foreach($_SESSION["customerBasket"] as $basketItemsNumber)
+    {
+        $basketCount +=$basketItemsNumber->quantity;
+    }
+    require_once "../View/adminHeaderFragment.php";
     require_once "../View/admin_view.php";
 }
-else if($_SESSION["userDetails"] == "Customer")
+else if(!empty($_SESSION["userDetails"]) && $_SESSION["userDetails"][0]->userType == "Customer")
 {
-    header("Location: ../Controller/products_controller.php");
-    exit;
+    if(!isset($_SESSION["customerBasket"]))
+    {
+        $_SESSION["customerBasket"] =[];
+        $_SESSION["customerPreviousSearch"] =[];
+    }
+    $quantityStatus = false;
+    $status = false;
+    $passwordStatus = false;
+    require_once "../View/customerHeaderFragment.php";
+    require_once "../View/customer_products_view.php";
 }
 else
 {
-    header("Location: ../Controller/login_control.php");
-    exit;
+    if(!isset($_SESSION["basket"]))
+    {
+        $_SESSION["basket"] =[];
+        $_SESSION["previousSearch"] =[];
+        $_SESSION["results"] = DataAccess::getInstance()->getAllProducts();
+    }
+    $quantityStatus = false;
+    $status = false;
+    $passwordStatus = false;
+    require_once "../View/guest_products_view.php";
 }
+
+
+
+
 
 ?>

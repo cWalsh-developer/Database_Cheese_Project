@@ -3,34 +3,131 @@
   src: url(Mailand\ Demo.otf);
 }
 
-
 .regContainerMain{
-    width: 25%;
     box-shadow: 10px 10px 10px 2px black;
     background: whitesmoke;
     margin: auto;
-    margin-top: 5%;
-    height: 450px;
+    margin-top: 40px;
+    height: fit-content;
+    width:600px;
     position: relative;
     font-size: large;
     border: solid 3px black;
+    padding-bottom: 5px;
+  }
+.regContainerMain_register_view{
+    box-shadow: 10px 10px 10px 2px black;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 15px;
+    height: fit-content;
+    width: 40%;
+    position: relative;
+    font-size: large;
+    border: solid 3px black;
+    padding-bottom: 5px;
   }
   body 
   {
     font-family: sans-serif;
     margin: 0;
   }
+  .center, .tableOverflow, table{
+    width: 99.8%;
+  }
+  #quantity
+  {
+    padding-left: 10px
+  }
+  .regContainerTitle
+  {
+    height: fit-content;
+    width: 100%;
+  }
   #Title
   {
     background-color: black;
     color: goldenrod;
-    height: 25px;
-    padding:10px;
+    height: fit-content;
+    padding:10px 55px;
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
     text-decoration: underline;
+    font-size: 70px;
   }
+
+  #admin_header
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    width: 100%;
+    background-color: black;
+    height: 110px;
+  }
+
+  #customer_header
+  {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    width: 100%;
+    background-color: black;
+    height: 110px;
+  }
+
+  .basketCenter
+  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .orderCenter
+  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #admin_nav
+  {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  #search
+  {
+    width: 500px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .background-div
+  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #searchSubmit
+  {
+    background-color: black;
+    color: goldenrod;
+    font-weight: bold;
+  }
+
   header
   {
     display: flex;
@@ -41,86 +138,378 @@
     font-size: x-large;
     width: 100%;
     background-color: black;
+    height: 110px;
   }
+
+  
+  #admin_page-Title
+  {
+    font-family: sans-serif;
+    color: goldenrod;
+    background-color: black;
+    margin: 0;
+    display: inline-flex;
+    list-style-type: none;
+  }
+  
+  #page-Title, #customer_info
+  {
+    font-family: sans-serif;
+    color: goldenrod;
+    background-color: black;
+    margin: 0;
+    display: inline-flex;
+    list-style-type: none;
+  }
+  
+  #customer_info li
+  {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 30px;
+    margin-left: 0;
+  }
+  
+  #customer_info a
+  {
+    text-decoration: none;
+    color: goldenrod;
+  }
+  
+  #basket_link
+  {
+    padding-right: 10px;
+  }
+  
+  #admin_page-Title
+  {
+    font-size: 1.5em;
+    padding-top: 20px;
+  }
+
+  #EditBtn, #DeleteBtn, #addProductBtn
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+
+  #guestBasketBtn
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+
+  #checkoutBtn
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+
+  .headings
+  {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin-right: 480px;
+  }
+
+  #admin_page-subTitle
+  {
+    font-size: 1.5em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: goldenrod;
+    padding-top: 5px;
+    text-decoration: underline;
+    padding-right: 0px;
+    padding-left:0px;
+    text-align: center;
+  }
+
+  #account_link
+  {
+    padding-right: 10px;
+  }
+
   #page-Title
+  {
+    padding-left:10px;
+    font-size: 2em;
+    font-family: 'cheese';
+    padding-right: 990px;
+  }
+
+  #log_out
+  {
+    background-color: black;
+    color: goldenrod;
+    box-shadow: 0px 2px 15px 1px goldenrod;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 18px;
+    margin-right: 10px;
+  }
+
+  #customer_info a :hover
+  {
+    box-shadow: 0px 5px 10px goldenrod;
+    transition: 0.3s ease-in-out;
+  }
+
+  #login_nav a
+  {
+    text-decoration: none;
+  }
+
+  
+  #login_page-Title
   {
     font-family: 'cheese';
     color: goldenrod;
     background-color: black;
-    width:fit-content;
-    text-align: left;
+    margin: 0;
+    font-size: 2.5em;
+    
   }
- .registrationForm
- {
+  
+  #guest_page-Title
+  {
+    font-family: 'cheese';
+    color: goldenrod;
+    background-color: black;
+    margin: 0;
+    font-size: 2em;
+    
+  }
+  
+  #admin_page-Title
+  {
+    font-family: 'cheese';
+    color: goldenrod;
+    background-color: black;
+    margin: 0;
+    font-size: 2em;
+    height: fit-content;
+    
+  }
+  
+  #admin_nav
+  {
+    width: 100%;
+    margin: 0;
+    display: inline;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  }
+  
+  #customer_nav
+  {
+    width: 100%;
+    margin: 0;
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  
+  .registrationForm
+  {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    height: fit-content;
     align-items: center;
- }
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .checkoutForm
+  {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #loginForm
+  {
+    display: block;
+    margin-top: 50px;
+    height: fit-content;
+  }
+  
+  #registerForm
+  {
+    padding-top: 5px;
+  }
+  
+  #cardDetailsForm
+  {
+    padding-left: 20px;
+  }
+  
+  #registerFormBtn
+  {
+    display: block;
+  }
+  
+  #email, #addressOne, #addressTwo
+  {
+    width:fit-content;
+  }
+  
+  #registerForm label
+  {
+    font-size: 25px;
+  }
+  
+  #cardDetailsForm label
+  {
+    font-size: 25px;
+  }
+  
+  #email, #password
+  {
+    height: 40px;
+    width: 250px;
+    font-size: 30px;
+  }
+  
+  #regEmail
+  {
+    width: 300px;
+    height: 40px;
+    font-size: 39px;
+  }
+  
+  .back_to_login_container #submitToLogin
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  
+  #newPassword, #addressOne, #addressTwo, #givenName, #surname, #town-city, #postcode, #confirmPassword
+  {
+    width: 300px;
+    height: 40px;
+    font-size: 26px;
+  }
+  
+  .login-center
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-center #submit
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  
+  #guest, #login
+  {
+    accent-color: goldenrod;
+    width: 20px;
+    height: 20px;
+  }
+  
+  #loginLabel
+  {
+    margin-right: 15px;
+  }
+  
+  #emailLabel, #passwordLabel
+  {
+    font-size: 30px;
+  }
+  
+  .start-center
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .radioForm-content
+  {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .cheese-table
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .cheese-table form #search
+  {
+    padding-right: 30px;
+  }
+  
+  table, tr, td
+  {
+    border: goldenrod solid 2px;
+    color: black;
+  }
 
- #loginForm
- {
-   display: none;
- }
-
- #Start
- {
-   display: none;
-   margin: 40px 0;
-   color: goldenrod;
-   background-color: black;
-   padding: 5px 20px;
- }
-
- .login-center
- {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
-
- #customer, #admin
- {
-  accent-color: goldenrod;
- }
-
- .start-center
- {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
-
- .radioForm-content
- {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
- }
-
- .cheese-table
- {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
- }
-
- table, tr, td
- {
-  border: goldenrod solid 2px;
-  color: black;
- }
- #submit
- {
+  #submit, #regSubmit
+  {
     margin: 0 auto;
     color: goldenrod;
     background-color: black;
     padding: 5px 20px;
-
+    font-size: 25px;
+    border-radius: 20px;
  }
+
+
+#regSubmit
+{
+  margin-bottom:20px;
+}
+
+.table_customer_design_div table tr td #basketBtn
+{
+  color: goldenrod;
+  background-color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+}
+
  form :focus
  {
     outline: none !important;
@@ -133,10 +522,614 @@
     font-size:large;
  }
 
- #radioForm
+ .dashboard
  {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
  }
+ .back_to_login_container
+ {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ 
+ /* Mobile design media query */
+ @media screen and (min-device-width: 320px) and (max-device-width: 480px)
+ {
+   /* Start of Customer Products View Design */
+
+
+  #guest_header
+  {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  body 
+  {
+    margin: 0;
+  }
+
+  #guest_page-Title
+  {
+    display: inline-flex;
+    color: goldenrod;
+    height: 10px;
+    font-size: 10px;
+    margin-top: 5px;
+    padding: 0;
+    margin: 0;
+  }
+
+  #log_in
+  {
+    flex: auto;
+    background-color: black;
+    color: goldenrod;
+    box-shadow: 0px 2px 15px 1px goldenrod;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+    #loginForm
+    {
+      display: block;
+      margin-top: 10px;
+      height: fit-content;
+    }
+   
+    #registerForm
+    {
+     padding-top: 5px;
+    }
+    
+    #registerFormBtn
+    {
+     display: block;
+    }
+
+    #login_page-Title
+    {
+      font-size: 3em;
+      color: goldenrod;
+    }
+    
+    #search, #search::placeholder, #search:focus
+    {
+      height: 60px;
+      width: 762px;
+      font-size: 28px;
+      padding-left: 10px;
+      margin-right: 20px;
+      color: goldenrod;
+    }
+    
+    #search
+    {
+      background-color: black;
+      border: solid 5px goldenrod;
+    }
+    
+    .table_customer_design_div table tr td #basketBtn
+    {
+      font-size: 50px;
+  
+    }
+    .table_customer_design_div table tr td
+    {
+      font-size: 50px;
+    }
+    
+    #searchSubmit
+    {
+      font-size: 2.3em;
+    }
+    
+    #log_out
+    {
+      font-size: 45px;
+      margin-left: 15px;
+      margin-top: 30px;
+    }
+    body 
+    {
+      margin: 0;
+    }
+    /* .regContainerMain{
+      box-shadow: 10px 10px 10px 2px black;
+      background: whitesmoke;
+      margin: auto;
+      margin-top: 200px;
+      height: 650px;
+      width:600px;
+      position: relative;
+      font-size: large;
+      border: solid 3px black;
+      padding-bottom: 5px;
+    }*/
+    
+    .regContainerMain_register_view{
+      box-shadow: 10px 10px 10px 2px black;
+      background: whitesmoke;
+      margin-top: 15px;
+      height: 1100px;
+      width: 60%;
+      position: relative;
+      font-size: large;
+      border: solid 3px black;
+      padding-bottom: 5px;
+    }
+
+    #radioForm p 
+    {
+      font-size: 50px;
+    }
+
+    #loginForm label
+    {
+      font-size: 50px;
+    }
+
+    #loginForm #email, #password
+    {
+      width: 450px;
+      font-size: 50px;
+    }
+    
+    .login-center #submit
+    {
+      color: goldenrod;
+      background-color: black;
+      font-weight: bold;
+      font-size: 45px;
+      margin-bottom: 25px;
+      border-radius: 20px;
+  }
+
+  .back_to_login_container
+  {
+    margin-top: 10px;
+  }
+
+  .back_to_login_container #submitToLogin
+  {
+    color: goldenrod;
+    background-color: black;
+    font-weight: bold;
+    font-size: 35px;
+    border-radius: 20px;
+  }
+
+  #regSubmit
+  {
+    font-size: 45px;
+  }
+  
+  ul a 
+  {
+    font-size: 2em;
+  }
+  table
+  {
+    width: 100%;
+ }
+
+ table tr 
+ {
+  border: none;
+  padding: 8px;
+  font-size: 25px;
+  border: none;
+ }
+
+ table td, th 
+ {
+  padding: 8px;
+  font-size: 40px;
+  border: none;
+ }
+
+ .table_customer_design_div
+ {
+  width: 100%;
+  /* overflow-x: auto; */
+ }
+
+ .table_customer_design_div table
+ {
+  width: 100%;
+ }
+
+ #customer_header
+ {
+  height: fit-content;
+  width: 100%;
+ }
+
+ #customer_header #customer_nav
+ {
+  position: fixed;
+ }
+
+ #searchTable
+ {
+  padding-top: 0px;
+  margin-left: 10px;
+  position: fixed;
+ }
+
+ .background-div
+ {
+  height: 80px;
+  padding-top: 20px;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 10px;
+  background-color:black;
+  margin-top: 0;
+ }
+
+ .cheese-table
+ {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  width:fit-content;
+}
+
+ .cheese-table table
+ {
+
+  width: 100%;
+}
+
+.tableOverflow
+{
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.center 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ #guestSearchForm
+ {
+  width: 100%;
+  display: inline-flex;
+
+}
+
+#guestBasketBtn
+{
+  font-size: 15px;
+}
+
+ .cheese-table thead th
+ {
+  font-size: 25px;
+
+}
+ .cheese-table tr td
+ {
+  font-size: 30px;
+ }
+
+ #customer_info ul #log_out
+ {
+  font-size: 19px;
+  padding: 0;
+  margin-right: 20px;
+ }
+
+ #customer_nav
+ {
+  height: 210px;
+  width: 100%;
+  background-color: black;
+ }
+
+ #customer_nav ul li
+ {
+ font-size: 19px;
+ }
+
+ #recentlyViewdItems li
+ {
+  font-size: 10px;
+  text-align: center;
+ }
+
+ #recentlyViewedHeading
+ {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+ }
+ #basketHeading
+ {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+ }
+
+ #basketList, #basketList li 
+ {
+  font-size: 10px;
+  text-align: center;
+ }
+
+ /* End of Customer Products View Design */
+
+}
+
+  
+
+@media screen and (min-device-width: 769px)
+{
+
+  .center 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  #customer_nav
+  {
+    height: 110px;
+  }
+  #guest_page-Title
+  {
+    margin-left: 15px;
+  }
+
+  #guest_header
+  {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #page-Title
+  {
+    height: fit-content;
+    font-size: 2em;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 26px;
+  }
+
+  #log_in
+  {
+    margin-right: 15px;
+    background-color: black;
+    color: goldenrod;
+    box-shadow: 0px 2px 15px 1px goldenrod;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 35px;
+  }
+
+  .table_customer_design_div table tr td #basketBtn
+{
+  color: goldenrod;
+  background-color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+}
+  .cheese-table table tr td #DeleteBtn, #EditBtn
+{
+  color: goldenrod;
+  background-color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+ form :focus
+ {
+    outline: none !important;
+    border: solid 2.5px #cca700a8;  
+    padding: 5px;
+ }
+
+  #customer_info
+  {
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  #customer_info a
+  {
+    height: fit-content;
+    padding: 0;
+    padding-top: 20px;
+  }
+
+  #admin_nav
+  {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #admin_page-subTitle
+  {
+    font-size: 2em;
+    color: goldenrod;
+    margin-top: 20px;
+    height: 100px;
+  }
+
+  #customer_header
+  {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    width: 100%;
+    background-color: black;
+    height:fit-content;
+  }
+
+
+  #search, #search::placeholder, #search:focus
+  {
+    height: 60px;
+    width: 762px;
+    font-size: 28px;
+    padding-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding-right: 15px;
+    color: goldenrod;
+  }
+
+  #search
+  {
+    background-color: black;
+    border: solid 5px goldenrod;
+  }
+
+   #basketBtn
+  {
+    font-size: 20px;
+  }
+
+  .headings
+  {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+  }
+
+  #searchSubmit
+  {
+    font-size: 2.3em;
+  }
+
+  #customer_info li
+  {
+    font-size: 1em;
+    margin-left: 0;
+    color: goldenrod;
+  }
+
+  #customer_info #log_out
+  {
+    font-size: 1em;
+    /* margin-left: 15px; */
+    color: goldenrod;
+  }
+  body 
+  {
+    margin: 0;
+  }
+
+  .login-center #submit
+  {
+    border-radius: 20px;
+  }
+
+ ul a 
+ {
+  font-size: 1em;
+ }
+ .cheese-table table
+ {
+  width: 100%;
+ }
+
+ table tr 
+ {
+  border: none;
+  padding: 8px;
+  font-size: 25px;
+  border: none;
+ }
+
+ table thead, td, th 
+ {
+  border: none;
+ }
+
+
+ .table_customer_design_div
+ {
+  width: 100%;
+ }
+
+ .centerRecentlyViewed
+ {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #recentlyViewdItems
+ {
+  font-size: 30px;
+  text-align: center;
+ }
+
+ #recentlyViewedHeading
+ {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+ }
+ #basketHeading
+ {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+ }
+
+ #basketList, #basketList li 
+ {
+  font-size: 40px;
+  text-align: center;
+ }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 801px)
+{
+  .headings
+  {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+    margin: 0;
+    width: 100%
+  };
+}
