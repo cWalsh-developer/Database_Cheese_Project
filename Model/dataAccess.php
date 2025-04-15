@@ -6,8 +6,8 @@ Class DataAccess
     private function __construct()
     {
         $this->connection = new PDO("mysql:host=localhost;dbname=db_k2116573",
-        "k2116573",
-        "oguizinu",
+        "********",
+        "*******",
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }
     public static function getInstance()
