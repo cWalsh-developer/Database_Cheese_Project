@@ -1,13 +1,27 @@
 <?php
+require_once realpath(__DIR__."/vendor/autoload.php");
+use Dotenv\Dotenv;
+
 Class DataAccess 
 {
     private static $instance = null;
     private $connection;
+    private $dbName;
+    private $dbUser;
+    private $dbPassword;
+    private $dbHost;
     private function __construct()
     {
-        $this->connection = new PDO("mysql:host=localhost;dbname=db_k2116573",
-        "k2116573",
-        "oguizinu",
+        $dotenv = Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+        $this->dbName = getenv('DB_NAME');
+        $this->dbUser = getenv('DB_USER');
+        $this->dbPassword = getenv('DB_PASSWORD');
+        $this->dbHost = getenv('DB_HOST');
+
+        $this->connection = new PDO("mysql:host={$this->dbHost};dbname={$this->dbName}",
+        "{$this->dbUser}",
+        "{$this->dbPassword}",
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }
     public static function getInstance()
