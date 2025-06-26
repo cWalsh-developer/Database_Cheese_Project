@@ -12,6 +12,7 @@ Class DataAccess
     private $dbHost;
     private function __construct()
     {
+<<<<<<< HEAD
         $dotenv = Dotenv::createImmutable(__DIR__);
         $dotenv->load();
         $this->dbName = getenv('DB_NAME');
@@ -22,6 +23,11 @@ Class DataAccess
         $this->connection = new PDO("mysql:host={$this->dbHost};dbname={$this->dbName}",
         "{$this->dbUser}",
         "{$this->dbPassword}",
+=======
+        $this->connection = new PDO("mysql:host=localhost;dbname=db_k2116573",
+        "********",
+        "*******",
+>>>>>>> 8ee3eb9b2f653f000e11739f40189ee8bca361b1
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }
     public static function getInstance()
